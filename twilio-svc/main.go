@@ -14,7 +14,7 @@ import (
 func main() {
 	var (
 		host = flag.String("host", "", "The Host or IP address the service is listening on")
-		port = flag.String("port", "3000", "The IP port number the service is listening on")
+		port = flag.String("port", "8080", "The IP port number the service is listening on")
 	)
 
 	flag.Parse()
@@ -22,7 +22,7 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/receive", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hi this is the TwilioBot listening endpoint!")
+		c.String(http.StatusOK, "Hi this is the TwilioBot listening endpoint version 2!")
 	})
 
 	router.Run(address)
