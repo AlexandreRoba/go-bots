@@ -3,6 +3,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/chrisenytc/twilio"
+  packages = ["twiml"]
+  revision = "4eec739592d8bce2b86b3ce9703d2e3d79a94950"
+
+[[projects]]
+  branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
   revision = "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
@@ -58,6 +64,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3cbf15d5b9ec523bb78807ccca6fc00b0e01741a87f90d55b3bdd6ba0437a765"
+  inputs-digest = "a8ea04179fda5ecde28de810db99fdffa1fed9cb2b6592ba504123134e8d1495"
   solver-name = "gps-cdcl"
   solver-version = 1

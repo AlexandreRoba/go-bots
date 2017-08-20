@@ -7,6 +7,9 @@ import (
 	"net/http"
 	"os"
 
+	"net/url"
+
+	"github.com/chrisenytc/twilio/twiml"
 	"github.com/gin-gonic/gin"
 	"github.com/sfreiberg/gotwilio"
 )
@@ -22,10 +25,20 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/receive", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hi this is the TwilioBot listening endpoint version 2!")
+		c.String(http.StatusOK, "Hi this is the TwilioBot listening endpoint!")
+	})
+	router.POST("/receive", func(context *gin.Context) {
+		context.Request.ParseForm()
+		log.Println(context.Request.Form)
+		feedback := BotBrains(context.Request.Form)
+		context.XML(http.StatusOK, feedback)
 	})
 
 	router.Run(address)
+}
+
+func BotBrains(url.Values) twiml.Message {
+	return twiml.Message{}
 }
 
 func SendSMS() {
